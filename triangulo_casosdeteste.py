@@ -43,3 +43,36 @@ Fazer uma lista de testes para validar cada um dos pontos abordados anteriorment
 10. Para cada teste você especificou a saída esperada do programa?
 
 '''
+
+'''
+Exemplos de condições favoráveis (entradas válidas) para cada critério:
+
+1. Triângulo escaleno válido:
+    (3, 4, 5)  # Todos os lados diferentes
+
+2. Triângulo equilátero válido:
+    (5, 5, 5)  # Todos os lados iguais
+
+3. Triângulo isósceles válido:
+    (4, 4, 5)  # Dois lados iguais
+
+4. Permutação dos lados iguais do isósceles:
+    (3, 3, 4), (3, 4, 3), (4, 3, 3)
+
+5. Um dos valores é zero (não forma triângulo):
+    (0, 4, 5)
+
+6. Um dos valores é negativo (não forma triângulo):
+    (-3, 4, 5)
+
+7. Soma de dois lados igual ao terceiro (não forma triângulo):
+    (2, 2, 4), (4, 2, 2), (2, 4, 2)
+
+8. Soma de dois lados menor que o terceiro (não forma triângulo):
+    (1, 2, 4), (4, 1, 2), (2, 4, 1)
+
+9. Menos entradas do que o esperado (erro de entrada):
+    (3, 4) ou (3,)
+
+10. Para cada teste, a saída esperada é especificada nos comentários acima.
+'''
