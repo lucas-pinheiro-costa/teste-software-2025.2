@@ -5,36 +5,41 @@
     b. Clientes do tipo B recebem 5% de desconto para compras abaixo de 10 itens; 15% de desconto entre 10 e 99 itens; 25% de desconto acima de 100 itens.
     c. Clientes do tipo C não recebem desconto se no de itens comprados for inferior a 10; 20% de desconto entre 10 e 99 itens; 25% de desconto acima de 100 itens.
 ** Elabore os casos de testes necessários para testar a função acima.
-
-O comando para rodar os testes é:
-```python
-python -m unittest test_q01_descontoCliente.py
-```
-
 '''
 
 def calcula_desconto(cliente, qtd):
+    # Validação da quantidade
+    '''if not isinstance(qtd, int) or qtd < 1 or qtd > 1000:
+        raise ValueError("A quantidade deve ser um inteiro entre 1 e 1000.")'''
+    if (qtd < 0):
+        raise ValueError("INVÁLIDO: A quantidade não pode ser um valor negativo.")
+    elif (qtd == 0):
+        raise ValueError("INVÁLIDO: A quantidade não pode ser zero.")
+    elif (qtd > 1000):
+        raise ValueError("INVÁLIDO: A quantidade não pode ser maior que 1000.")
+
+    # Validação do tipo de cliente
+    if cliente not in ('A', 'B', 'C'):
+        raise ValueError("INVÁLIDO: tipo de cliente está incorreto. Aceito apenas 'A', 'B' ou 'C'.")
+
     if cliente == 'A':
         if qtd < 10:
-            return 0.0
+            return "VÁLIDO: O desconto é de 0%."
         elif 10 <= qtd <= 99:
-            return 0.05
+            return "VÁLIDO: O desconto é de 5%."
         elif qtd >= 100:
-            return 0.10
+            return "VÁLIDO: O desconto é de 10%."
     elif cliente == 'B':
         if qtd < 10:
-            return 0.05
+            return "VÁLIDO: O desconto é de 5%."
         elif 10 <= qtd <= 99:
-            return 0.15
+            return "VÁLIDO: O desconto é de 15%."
         elif qtd >= 100:
-            return 0.25
+            return "VÁLIDO: O desconto é de 25%."
     elif cliente == 'C':
         if qtd < 10:
-            return 0.0
+            return "VÁLIDO: O desconto é de 0%."
         elif 10 <= qtd <= 99:
-            return 0.20
+            return "VÁLIDO: O desconto é de 20%."
         elif qtd >= 100:
-            return 0.25
-    else:
-        raise ValueError('Tipo de cliente inválido')
-
+            return "VÁLIDO: O desconto é de 25%."
