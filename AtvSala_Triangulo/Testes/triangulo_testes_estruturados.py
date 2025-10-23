@@ -4,7 +4,6 @@ try:
     L1 = int(input("\tDigite o valor do primeiro lado: "))
     L2 = int(input("\tDigite o valor do segundo lado: "))
     L3 = int(input("\tDigite o valor do terceiro lado: "))
-    # Verificações feitas: 
 
     # --- Verificação da condição de existência de um triângulo ---
     # A soma de dois lados quaisquer deve ser sempre maior que o terceiro lado.

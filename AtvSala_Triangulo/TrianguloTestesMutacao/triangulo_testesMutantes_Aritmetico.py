@@ -5,7 +5,7 @@ import sys
 def classificar_triangulo(L1, L2, L3):
     if not all(isinstance(x, int) for x in [L1, L2, L3]):
         return "ERRO: Por favor, insira apenas números inteiros válidos."
-    if ((L1 + L2) > L3) and ((L1 + L3) == L2) and ((L2 + L3) > L1):  # Mutante aqui
+    if ((L1 + L2) > L3) and ((L1 - L3) > L2) and ((L2 + L3) > L1):  # Mutante aqui
         if L1 == L2 and L2 == L3:
             return "O triângulo é EQUILÁTERO (todos os lados são iguais)."
         elif L1 == L2 or L1 == L3 or L2 == L3:
